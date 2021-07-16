@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
 
+// 메인 홈에서는 null로할지 one에 추가할지 고민
 export type OneDepth = "aa" | "bb" | "cc";
 export type TwoDepth = "two-aa" | "two-dd";
 
