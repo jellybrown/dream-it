@@ -61,7 +61,7 @@ html,
 body {
   font-size: 10px;
   margin: 0;
-  font-family: "Noto Sans KR";
+  font-family: "NanumSquareRound";
   color: #343a40;
   height: 100%;
 }
@@ -130,7 +130,14 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>{/* <title>dream it</title> */}</Head>
+        <Head>
+          <title>Dream It</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
