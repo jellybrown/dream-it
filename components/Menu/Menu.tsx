@@ -1,15 +1,7 @@
-import {
-  OuterItem,
-  OuterList,
-  Svg,
-  Title,
-  TopContent,
-  Wrapper,
-} from "./Menu.style";
-import NextArrowIcon from "../../public/arrow-next.svg";
+import { OuterList, Svg, TopContent, Wrapper } from "./Menu.style";
 import CloseIcon from "../../public/close.svg";
 import { menuData } from "./menuData";
-import SubMenu from "./SubMenu";
+import MenuItem from "./MenuItem";
 
 const Menu = () => {
   return (
@@ -22,15 +14,7 @@ const Menu = () => {
       </TopContent>
       <OuterList>
         {menuData.map((data) => (
-          <OuterItem key={data.id}>
-            <Title>
-              <a>{data.title}</a>
-              <Svg className="next">
-                <NextArrowIcon />
-              </Svg>
-            </Title>
-            <SubMenu data={data.subMenu} />
-          </OuterItem>
+          <MenuItem data={data} />
         ))}
       </OuterList>
     </Wrapper>

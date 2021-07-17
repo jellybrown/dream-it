@@ -40,7 +40,7 @@ export const Svg = styled.span`
 
 export const OuterList = styled.ul``;
 
-export const OuterItem = styled.li`
+export const OuterItem = styled.li<{ onClick: any }>`
   padding: 1rem 0;
 `;
 
