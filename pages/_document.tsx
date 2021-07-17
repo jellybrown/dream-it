@@ -33,7 +33,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   line-height: 1;
 }
@@ -61,15 +63,25 @@ html,
 body {
   font-size: 10px;
   margin: 0;
+  font-weight: 300;
   font-family: "NanumSquareRound";
   color: #343a40;
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: #343a40;
+}
+
 #__next {
   height: 100%;
 }
-
+@font-face {
+font-family: "NanumSquareRound";
+font-weight: 300;
+src: url("https://cdn.jsdelivr.net/npm/typeface-nanum-square-round@1.0.2/NanumSquareRoundL.woff") format('woff');
+}
 @font-face {
 font-family: "NanumSquareRound";
 font-weight: 400;
