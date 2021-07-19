@@ -3,7 +3,7 @@ import Layout from "../../../components/Layout/Layout";
 
 const Staff = () => {
   return (
-    <Layout>
+    <Layout title="운영진 소개">
       <div> staff page</div>
     </Layout>
   );
