@@ -6,7 +6,7 @@ const useToggle = (initialState = false) => {
   const toggle = () => {
     setOpened((prev) => !prev);
   };
-  return [opened, toggle];
+  return [opened, toggle] as const;
 };
 
 export default useToggle;

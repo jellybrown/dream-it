@@ -4,14 +4,19 @@ import HomeIcon from "../../public/home.svg";
 import { menuData } from "./menuData";
 import MenuItem from "./MenuItem";
 
-const Menu = () => {
+interface MenuProps {
+  openedMenu: boolean;
+  toggleMenu: () => void;
+}
+
+const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
   return (
-    <Wrapper>
+    <Wrapper opened={openedMenu}>
       <TopContent>
         <Svg className="home">
           <HomeIcon width="30" height="30" />
         </Svg>
-        <Svg className="close">
+        <Svg className="close" onClick={toggleMenu}>
           <CloseIcon />
         </Svg>
       </TopContent>

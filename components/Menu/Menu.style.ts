@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const COMMON_PADDING = 2.8; // 양옆 공통여백
 
-export const Wrapper = styled.aside`
-  width: 30%;
+export const Wrapper = styled.aside<{ opened: boolean }>`
+  width: 300px;
   height: 100vh;
   position: fixed;
-  min-width: 250px;
-  max-width: 320px;
   background-color: #f8f8f8;
+  left: ${({ opened }) => (opened ? "0" : "-300px")};
+  transition: 0.3s;
 `;
 
 export const TopContent = styled.div`
@@ -27,7 +27,7 @@ export const TopContent = styled.div`
   }
 `;
 
-export const Svg = styled.span`
+export const Svg = styled.span<{ onClick?: any }>`
   cursor: pointer;
 
   &.close svg {
