@@ -29,6 +29,7 @@ export const TopContent = styled.div`
 
 export const Svg = styled.span`
   cursor: pointer;
+
   &.close svg {
     transform: scale(0.8);
   }
@@ -39,19 +40,3 @@ export const Svg = styled.span`
 `;
 
 export const OuterList = styled.ul``;
-
-export const OuterItem = styled.li<{ onClick: any }>`
-  padding: 1rem 0;
-`;
-
-export const Title = styled.div`
-  display: flex;
-  padding: 1.4rem ${COMMON_PADDING}rem;
-  align-items: center;
-  a {
-    display: block;
-    width: 100%;
-    font-size: 2.1rem;
-    font-weight: 400;
-  }
-`;

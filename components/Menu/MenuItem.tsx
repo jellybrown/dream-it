@@ -1,6 +1,7 @@
 import React from "react";
 import { InnerItem, InnerList, OuterItem, Title } from "./MenuItem.style";
 import NextArrowIcon from "../../public/arrow-next.svg";
+import DownArrowIcon from "../../public/arrow-down.svg";
 import { Svg } from "./Menu.style";
 import useToggle from "../../hooks/useToggle";
 
@@ -15,19 +16,20 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
   const [opened, toggleOpened] = useToggle();
+  const activeMenuName = "오시는 길";
 
   return (
-    <OuterItem onClick={toggleOpened}>
-      <Title>
+    <OuterItem>
+      <Title onClick={toggleOpened}>
         <a>{data.title}</a>
         <Svg className="next">
-          <NextArrowIcon />
+          {opened ? <DownArrowIcon /> : <NextArrowIcon />}
         </Svg>
       </Title>
       <InnerList>
         {opened &&
           data.subMenu.map((item, id) => (
-            <InnerItem key={id}>
+            <InnerItem key={id} active={item.name === activeMenuName}>
               <a href={item.location}>{item.name}</a>
             </InnerItem>
           ))}
