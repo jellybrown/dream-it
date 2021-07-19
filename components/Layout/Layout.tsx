@@ -2,13 +2,14 @@ import React, { ReactNode } from "react";
 import useToggle from "../../hooks/useToggle";
 import MenuIcon from "../../public/menu.svg";
 import Menu from "../Menu/Menu";
-import { LayoutContent, LayoutWrapper, Svg } from "./Layout.style";
+import { LayoutContent, LayoutWrapper, Svg, H1 } from "./Layout.style";
 
 interface Props {
+  title?: string;
   children?: ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ title, children }) => {
   const [openedMenu, toggleMenu] = useToggle(true);
 
   return (
@@ -18,6 +19,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <Svg openedMenu={openedMenu} onClick={toggleMenu}>
           <MenuIcon width="25" height="25" fill="gray" />
         </Svg>
+        {title && <H1>{title}</H1>}
         {children}
         <footer>
           <span>I'm here to stay (Footer)</span>

@@ -12,6 +12,7 @@ export const LayoutContent = styled.div<{ openedMenu: boolean }>`
   right: 0;
   top: 0;
   min-height: 100vh;
+  padding: 2.5rem;
 `;
 
 export const Svg = styled.span<{ openedMenu: boolean }>`
@@ -23,4 +24,10 @@ export const Svg = styled.span<{ openedMenu: boolean }>`
   opacity: ${({ openedMenu }) => (openedMenu ? "0" : "1")};
   transition: ${({ openedMenu }) => (openedMenu ? "0" : "1s")};
   transition-delay: ${({ openedMenu }) => (openedMenu ? "0" : "0.5s")};
+`;
+
+export const H1 = styled.h1`
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: center;
 `;
