@@ -1,5 +1,4 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-
 import { User } from "../../interfaces";
 import { sampleUserData } from "../../utils/sample-data";
 import Layout from "../../components/Layout";
@@ -21,15 +20,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
     );
   }
 
-  return (
-    <Layout
-      title={`${
-        item ? item.name : "User Detail"
-      } | Next.js + TypeScript Example`}
-    >
-      {item && <ListDetail item={item} />}
-    </Layout>
-  );
+  return <Layout>{item && <ListDetail item={item} />}</Layout>;
 };
 
 export default StaticPropsDetail;
