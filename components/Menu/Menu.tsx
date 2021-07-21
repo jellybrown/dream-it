@@ -4,12 +4,18 @@ import HomeIcon from "../../public/home.svg";
 import { menuData } from "./menuData";
 import MenuItem from "./MenuItem";
 
+import { useState } from "react";
+
 interface MenuProps {
   openedMenu: boolean;
   toggleMenu: () => void;
 }
 
+export type MenuId = "intro" | "business" | "opened" | "volunteer";
+
 const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
+  const [openedSubMenuId, setSubMenuId] = useState<MenuId>("intro");
+
   return (
     <Wrapper opened={openedMenu}>
       <TopContent>
@@ -22,7 +28,12 @@ const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
       </TopContent>
       <OuterList>
         {menuData.map((data) => (
-          <MenuItem data={data} />
+          <MenuItem
+            key={data.id}
+            data={data}
+            opened={openedSubMenuId === data.id}
+            setSubMenuId={setSubMenuId}
+          />
         ))}
       </OuterList>
     </Wrapper>
