@@ -6,12 +6,12 @@ export const menuData = [
       {
         id: "1",
         name: "운영진 소개",
-        location: "/",
+        location: "/intro/staff",
       },
       {
         id: "2",
         name: "오시는 길",
-        location: "/",
+        location: "/intro/map",
       },
     ],
   },
@@ -22,7 +22,7 @@ export const menuData = [
       {
         id: "3",
         name: "주요사업",
-        location: "/",
+        location: "/business/list",
       },
     ],
   },
@@ -33,17 +33,17 @@ export const menuData = [
       {
         id: "4",
         name: "공지사항",
-        location: "/",
+        location: "/opened/notice",
       },
       {
         id: "5",
         name: "재정보고",
-        location: "/",
+        location: "/opened/report",
       },
       {
         id: "6",
         name: "이번달 감사한 분",
-        location: "/",
+        location: `/opened/thanksTo`,
       },
     ],
   },
@@ -54,12 +54,17 @@ export const menuData = [
       {
         id: "7",
         name: "봉사 소개",
-        location: "/",
+        location: "/volunteer/introduce",
       },
       {
         id: "8",
         name: "후원 문의",
-        location: "/",
+        location: "/volunteer/question",
+      },
+      {
+        id: "9",
+        name: "봉사 신청",
+        location: "/volunteer/apply",
       },
     ],
   },
