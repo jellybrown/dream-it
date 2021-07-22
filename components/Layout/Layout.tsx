@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import styled from "styled-components";
 import useToggle from "../../hooks/useToggle";
 import MenuIcon from "../../public/menu.svg";
 import Menu from "../Menu/Menu";
@@ -8,6 +9,13 @@ interface Props {
   title?: string;
   children?: ReactNode;
 }
+
+// page 안 공통 wrapper
+export const CommonWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+`;
 
 const Layout: React.FC<Props> = ({ title, children }) => {
   const [openedMenu, toggleMenu] = useToggle(true);
@@ -21,8 +29,8 @@ const Layout: React.FC<Props> = ({ title, children }) => {
         </Svg>
         {title && <H1>{title}</H1>}
         {children}
-        <footer>
-          <span>I'm here to stay (Footer)</span>
+        <footer style={{ backgroundColor: "dodgerblue", padding: "2rem" }}>
+          <span style={{ fontSize: "20px" }}>I'm here to stay (Footer)</span>
         </footer>
       </LayoutContent>
     </LayoutWrapper>
