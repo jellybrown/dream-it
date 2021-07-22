@@ -5,16 +5,22 @@ import { menuData } from "./menuData";
 import MenuItem from "./MenuItem";
 
 import { useState } from "react";
+import { changeOuterMenu, MenuId } from "../../redux/postsSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 interface MenuProps {
   openedMenu: boolean;
   toggleMenu: () => void;
 }
 
-export type MenuId = "intro" | "business" | "opened" | "volunteer";
-
 const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
-  const [openedSubMenuId, setSubMenuId] = useState<MenuId>("intro");
+  const dispatch = useAppDispatch();
+  const outerMenu = useAppSelector((state) => state.posts.currentMenu.oneDepth);
+  //   const [openedSubMenuId, setSubMenuId] = useState<MenuId>("intro");
+
+  const onChangeSubMenuId = (stringId: string) => {
+    dispatch(changeOuterMenu(stringId));
+  };
 
   return (
     <Wrapper opened={openedMenu}>
@@ -31,8 +37,8 @@ const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
           <MenuItem
             key={data.id}
             data={data}
-            opened={openedSubMenuId === data.id}
-            setSubMenuId={setSubMenuId}
+            opened={outerMenu === data.id}
+            onChangeSubMenuId={onChangeSubMenuId}
           />
         ))}
       </OuterList>
