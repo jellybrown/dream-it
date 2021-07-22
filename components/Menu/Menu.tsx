@@ -3,9 +3,7 @@ import CloseIcon from "../../public/close.svg";
 import HomeIcon from "../../public/home.svg";
 import { menuData } from "./menuData";
 import MenuItem from "./MenuItem";
-
-import { useState } from "react";
-import { changeOuterMenu, MenuId } from "../../redux/postsSlice";
+import { changeOuterMenu } from "../../redux/postsSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 interface MenuProps {
@@ -16,7 +14,6 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ openedMenu, toggleMenu }) => {
   const dispatch = useAppDispatch();
   const outerMenu = useAppSelector((state) => state.posts.currentMenu.oneDepth);
-  //   const [openedSubMenuId, setSubMenuId] = useState<MenuId>("intro");
 
   const onChangeSubMenuId = (stringId: string) => {
     dispatch(changeOuterMenu(stringId));
