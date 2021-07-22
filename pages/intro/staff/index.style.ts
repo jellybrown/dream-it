@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+// page 안 공통 wrapper
+export const CommonWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
 export const Row = styled.div`
   display: flex;
   padding: 6rem 0;

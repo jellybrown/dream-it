@@ -10,13 +10,6 @@ interface Props {
   children?: ReactNode;
 }
 
-// page 안 공통 wrapper
-export const CommonWrapper = styled.div`
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-`;
-
 const Layout: React.FC<Props> = ({ title, children }) => {
   const [openedMenu, toggleMenu] = useToggle(true);
 

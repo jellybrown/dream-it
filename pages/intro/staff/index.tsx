@@ -1,6 +1,6 @@
 import React from "react";
-import Layout, { CommonWrapper } from "../../../components/Layout/Layout";
-import { ImageArea, Name, Row, Text } from "./index.style";
+import Layout from "../../../components/Layout/Layout";
+import { CommonWrapper, ImageArea, Name, Row, Text } from "./index.style";
 
 const Staff = () => {
   return (
